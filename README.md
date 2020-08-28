@@ -4,7 +4,7 @@
 
 First docker must be [installed](https://docs.docker.com/engine/install/ubuntu)
 
-For installation instructions see [here](https://k3d.io/#installation)
+For K3D installation instructions see [here](https://k3d.io/#installation)
 
 You will need kubectl [installed](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 
