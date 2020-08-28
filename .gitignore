@@ -1,0 +1,24 @@
+# build directories
+obj/
+bin/
+
+# User-specific files
+*.suo
+*.user
+
+# Resharper files
+_ReSharper.Caches/
+
+# VS Code files
+.vscode/
+
+# VS 2017 files
+.vs/
+
+# Node files/npm
+node_modules/
+
+# Web deploy files
+wwwroot/
+
+package-lock.json

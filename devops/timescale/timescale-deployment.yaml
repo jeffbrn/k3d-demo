@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: timescale-deployment
+  labels:
+    app: timescale
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: timescale
+  template:
+    metadata:
+      labels:
+        app: timescale
+    spec:
+      volumes:
+        - name: ts-pv-data
+          persistentVolumeClaim:
+            claimName: ts-pv-claim
+      containers:
+      - name: timescale-cnt
+        image: timescale/timescaledb:latest-pg12
+        ports:
+        - containerPort: 5432
+          name: client
+        volumeMounts:
+        - name: ts-pv-data
+          mountPath: /var/lib/postgresql/data
+        env:
+          - name: POSTGRES_PASSWORD
+            value: "password"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: timescale-svc
+  labels:
+    app: timescale
+spec:
+  ports:
+  - port: 5432
+    targetPort: 5432
+    nodePort: 31432  # external access
+    name: client
+  selector:
+    app: timescale
+  type: NodePort
+
