@@ -11,7 +11,7 @@ You will need kubectl [installed](https://kubernetes.io/docs/tasks/tools/install
 
 ## Repo Layout
 
-src - C# test web project to deploy
-devops - Files for testing k3d deployments
-devops/timescale - Test deployment for a timescale database with a persistent volume example
-devops/webapp - Test deployment for a distributed web app that demonstrates the k3d loadbalancer and pulling from a local docker repo
+* src - C# test web project to deploy
+* devops - Files for testing k3d deployments
+* devops/timescale - Test deployment for a timescale database with a persistent volume example
+* devops/webapp - Test deployment for a distributed web app that demonstrates the k3d loadbalancer and pulling from a local docker repo
