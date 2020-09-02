@@ -8,6 +8,9 @@ echo "Changing kube config owner to ${U}"
 chown $U ~/.kube/config
 # Setup a route from the cluster to your docker registry
 docker network connect k3d-app1 registry.localhost
+# Decrypt secrets from the repo
+rm secret.yaml # make sure secrets are frshly decrypted
+gpg -d secret.yaml.gpg > secret.yaml
 # Add the pod secrets to the cluster
 kubectl apply -f secret.yaml
 # Startup the pods and the service entrypoint
