@@ -25,6 +25,19 @@ The registries.yaml tells k3d that this is a valid registry and will pull images
 
 ## Generating Injected Secrets
 
+The secret.yaml.gpg is an encrypted file that holds the secrets used by the cluster.
+During the 'up' script the user will be prompted for the password to decrypt the secrets file before it is uploaded into the cluster.
+
+The password to decrypt is: _Ggzdac219!_
+
+If the password is correct the file is decrypted and put into *secret.yaml*
+
+To encrypt the original file the command is:
+
+```
+$ gpg -c secret.yaml
+```
+
 The secret.yaml file holds the secrets to be injected into the running pods.
 The secrets must be base64 encoded this can be done at the commandline by:
 

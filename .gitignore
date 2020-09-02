@@ -22,3 +22,6 @@ node_modules/
 wwwroot/
 
 package-lock.json
+
+# Make sure secrets arent checked in
+secret.yaml
