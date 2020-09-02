@@ -10,6 +10,9 @@ echo "Changing kube config owner to ${U}"
 chown $U ~/.kube/config
 # Setup the persistent volume for the cluster
 kubectl apply -f vols.yaml
+# Decrypt secrets from the repo
+rm secret.yaml # make sure secrets are freshly decrypted
+gpg -d secret.yaml.gpg > secret.yaml
 # Add the pod secrets to the cluster
 kubectl apply -f secret.yaml
 # Startup the pods and the service entrypoint
