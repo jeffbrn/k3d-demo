@@ -14,7 +14,7 @@
 <body>
 
 <div>
-    <h4>ConnectionInfo</h4>
+    <h2>ConnectionInfo</h2>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -36,6 +36,14 @@
             @Html.DisplayFor(model => model.Id)
         </dd>
     </dl>
+	<h4>Environment Variables</h4>
+	<ul>
+		@{
+			foreach (var line in Model.EnvVars) {
+				<li>@line</li>
+			}
+		}
+	</ul>
 </div>
 </body>
 </html>

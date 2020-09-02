@@ -17,6 +17,9 @@ spec:
       containers:
       - name: app-web-cnt
         image: registry.localhost:5000/app-web-img:staging
+        envFrom:
+          - secretRef:
+              name: mysecret
         ports:
         - containerPort: 8080
 ---
