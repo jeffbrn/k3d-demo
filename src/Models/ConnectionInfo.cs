@@ -5,5 +5,6 @@ namespace BaseWebApp.Models {
 		public string RequestIp { get; set; }
 		public string HostName { get; set; }
 		public string Id { get; set; }
+		public string[] EnvVars { get; set; }
 	}
 }
