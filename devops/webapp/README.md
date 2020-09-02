@@ -32,7 +32,7 @@ The secrets must be base64 encoded this can be done at the commandline by:
 $ echo -n "mypassword" | base64
 ```
 
-The encoded value is then show which can then be copied and pasted into the secret.yaml file.
+The encoded value is then shown which can then be copied and pasted into the secret.yaml file.
 
 ## Testing the website
 

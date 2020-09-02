@@ -2,7 +2,7 @@
 
 # get the logged in user's username
 U=`logname`
-# create the cluster and setup the cluster load balancer to handle traffic fo the webapp service
+# create the cluster and setup the cluster load balancer to handle traffic to the webapp service
 k3d cluster create app1 -p 8080:31080@loadbalancer --volume $PWD/reg/registries.yaml:/etc/rancher/k3s/registries.yaml --agents 3
 echo "Changing kube config owner to ${U}"
 chown $U ~/.kube/config

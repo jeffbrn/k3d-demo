@@ -27,9 +27,9 @@ spec:
         volumeMounts:
         - name: ts-pv-data
           mountPath: /var/lib/postgresql/data
-        env:
-          - name: POSTGRES_PASSWORD
-            value: "password"
+        envFrom:
+          - secretRef:
+              name: db-passwd 
 ---
 apiVersion: v1
 kind: Service
